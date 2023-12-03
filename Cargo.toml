@@ -17,5 +17,12 @@ path = "bin/day01a.rs"
 name = "day01b"
 path = "bin/day01b.rs"
 
+[[bin]]
+name = "day02a"
+path = "bin/day02a.rs"
+
+[[bin]]
+name = "day02b"
+path = "bin/day02b.rs"
 
 [dependencies]
