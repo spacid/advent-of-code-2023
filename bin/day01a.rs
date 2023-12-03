@@ -1,20 +1,13 @@
-use std::{fs::read_to_string, char};
-
-fn read_lines(filename: &str) -> Vec<String> {
-    read_to_string(filename) 
-        .unwrap()  // panic on possible file-reading errors
-        .lines()  // split the string into an iterator of string slices
-        .map(String::from)  // make each slice into a string
-        .collect()  // gather them together into a vector
-}
+use aoc::read_lines;
+use std::char;
 
 fn calculate_result() -> u32 {
     let mut sum: u32 = 0;
 
-    let lines  = read_lines("inputs/day01.txt");
+    let lines = read_lines("inputs/day01.txt");
     for line in lines {
         let mut char1: char = 'b';
-        let mut char2: char ='c';
+        let mut char2: char = 'c';
         for c in line.chars() {
             if c.is_digit(10) {
                 char1 = c;
@@ -30,7 +23,7 @@ fn calculate_result() -> u32 {
         let mut concat_str = String::new();
         concat_str.push(char1);
         concat_str.push(char2);
-        let digit:u32 = concat_str.parse().unwrap();
+        let digit: u32 = concat_str.parse().unwrap();
         sum += digit;
     }
     sum
