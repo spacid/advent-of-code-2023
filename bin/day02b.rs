@@ -57,7 +57,7 @@ fn main() {
 mod tests {
     use super::*;
     #[test]
-    fn day01b() {
+    fn day02b_sample() {
         let lines = vec![
             "Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green".to_owned(),
             "Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue".to_owned(),
@@ -66,5 +66,9 @@ mod tests {
             "Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green".to_owned(),
         ];
         assert_eq!(calculate_result(lines), 2286);
+    }
+    #[test]
+    fn day02b_result() {
+        assert_eq!(calculate_result(read_lines("inputs/day02.txt")), 72422);
     }
 }

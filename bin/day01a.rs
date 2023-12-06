@@ -1,10 +1,9 @@
 use aoc::read_lines;
 use std::char;
 
-fn calculate_result() -> u32 {
+fn calculate_result(lines: Vec<String>) -> u32 {
     let mut sum: u32 = 0;
 
-    let lines = read_lines("inputs/day01.txt");
     for line in lines {
         let mut char1: char = 'b';
         let mut char2: char = 'c';
@@ -30,14 +29,25 @@ fn calculate_result() -> u32 {
 }
 
 fn main() {
-    println!("Sum {}", calculate_result());
+    println!("Sum {}", calculate_result(read_lines("inputs/day01.txt")));
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn day01a() {
-        assert_eq!(calculate_result(), 55090);
+    fn day01a_sample() {
+        let lines = vec![
+            "1abc2".to_owned(),
+            "pqr3stu8vwx".to_owned(),
+            "a1b2c3d4e5f".to_owned(),
+            "treb7uchet".to_owned(),
+        ];
+        assert_eq!(calculate_result(lines), 142);
+    }
+
+    #[test]
+    fn day01a_result() {
+        assert_eq!(calculate_result(read_lines("inputs/day01.txt")), 55090);
     }
 }

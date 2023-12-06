@@ -1,7 +1,7 @@
 use aoc::read_lines;
 use std::char;
 
-fn calculate_result() -> u32 {
+fn calculate_result(lines: Vec<String>) -> u32 {
     let mut sum: u32 = 0;
     let map = [
         ("one", "1"),
@@ -14,7 +14,6 @@ fn calculate_result() -> u32 {
         ("eight", "8"),
         ("nine", "9"),
     ];
-    let lines = read_lines("inputs/day01.txt");
     for line in lines {
         let mut sub_line = line;
         for (key, val) in map {
@@ -45,14 +44,28 @@ fn calculate_result() -> u32 {
 }
 
 fn main() {
-    println!("Sum: {}", calculate_result())
+    println!("Sum: {}", calculate_result(read_lines("inputs/day01.txt")))
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn day01b() {
-        assert_eq!(calculate_result(), 54845);
+    fn day01b_sample() {
+        let lines = vec![
+            "two1nine".to_owned(),
+            "eightwothree".to_owned(),
+            "abcone2threexyz".to_owned(),
+            "xtwone3four".to_owned(),
+            "4nineeightseven2".to_owned(),
+            "zoneight234".to_owned(),
+            "7pqrstsixteen".to_owned(),
+        ];
+        assert_eq!(calculate_result(lines), 281);
+    }
+
+    #[test]
+    fn day01b_result() {
+        assert_eq!(calculate_result(read_lines("inputs/day01.txt")), 54845);
     }
 }
