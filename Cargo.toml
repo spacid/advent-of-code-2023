@@ -36,3 +36,10 @@ path = "bin/day04a.rs"
 [[bin]]
 name = "day04b"
 path = "bin/day04b.rs"
+
+[[bin]]
+name = "day05a"
+path = "bin/day05a.rs"
+
+[dependencies]
+indoc = "2"
