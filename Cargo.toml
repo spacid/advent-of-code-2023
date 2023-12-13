@@ -38,8 +38,8 @@ name = "day04b"
 path = "bin/day04b.rs"
 
 [[bin]]
-name = "day05a"
-path = "bin/day05a.rs"
+name = "day05"
+path = "bin/day05.rs"
 
 [dependencies]
 indoc = "2"
