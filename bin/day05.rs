@@ -46,7 +46,7 @@ fn calculate_result(seeds: &Vec<u64>, sections_split: Split<'_, &str>) -> u64 {
             for range_section in &range_sections {
                 destination = calculate_destination(destination, &range_section);
             }
-            if  destination < lowest_destination {
+            if destination < lowest_destination {
                 lowest_destination = destination;
             }
             lowest_destination
